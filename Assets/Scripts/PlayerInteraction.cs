@@ -5,8 +5,6 @@ using UnityEngine;
 public class PlayerInteraction : MonoBehaviour {
 public float Horizontal;
 public float Vertical;
-public Rigidbody2D rb2d;
-public float e;
 	// Use this for initialization
 	void Start () 
 	{
@@ -19,6 +17,6 @@ public float e;
 		Horizontal = Input.GetAxis("Horizontal");
 		Vertical = Input.GetAxis("Vertical");
 
-		rb2d.AddForce(new Vector2(Horizontal*e, Vertical*e));
+		transform.Translate(Horizontal, Vertical, 0);
 	}
 }
